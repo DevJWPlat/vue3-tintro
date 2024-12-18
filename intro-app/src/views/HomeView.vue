@@ -1,18 +1,39 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <HeroMain herocolour="green" title="You're home!"
+      subtitle="Welcome back" text="lorem ipsom sur i dar etc..."/>
+      <div class="button-container">
+    
+        <BaseButton color="blue" size="medium" width="max-content" border-radius="normal" href="https://google.com" target="_blank" icon="fa-brands fa-google">Google</BaseButton>
+        <BaseButton color="red" size="extralarge" border-radius="small" width="full" href="/about">About</BaseButton>
+        <BaseButton color="green" size="small" border-radius="large" width="max-content" href="https://www.w3schools.com/tags/att_a_target.asp" target="_blank" icon="fa-sharp fa-solid fa-graduation-cap">W3 schools</BaseButton>
+        <BaseButton color="black" size="medium" border-radius="pill" width="max-content" href="/questionare">Quiz</BaseButton>
+        <BaseButton color="white" size="large" width="max-content">none</BaseButton>
+      </div>
   </div>
+
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
+<script>
+import HeroMain from '@/components/HeroMain.vue'
+import BaseButton from '@/components/Button.vue'
 
-@Options({
+export default {
+  name: 'HomeView',
   components: {
-    HelloWorld
+    HeroMain,
+    BaseButton
   }
-})
-export default class HomeView extends Vue {}
+}
 </script>
+
+<style lang="scss">
+  .button-container {
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 50%;
+    align-items: center;
+  }
+</style>
