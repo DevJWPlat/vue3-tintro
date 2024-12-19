@@ -3,6 +3,7 @@
         :class="['base-button', colorClass, sizeClass, widthClass, borderRadiusClass]"
         :href="href"
         :target="target"
+        @click="handleClick"
     >
         <slot>{{ label }}</slot>
         <i v-if="icon" :class="['base-button--icon', icon]"></i>
@@ -45,6 +46,10 @@
             type: String,
             default: "", 
         },
+        onClick: {
+            type: Function,
+            default: null,
+        },
     },
     computed: {
       colorClass() {
@@ -59,6 +64,14 @@
       widthClass() {
         return `base-button--${this.borderRadius}`;
       },
+    },
+    methods: {
+        handleClick(event) {
+        if (this.onClick) {
+            event.preventDefault();
+            this.onClick(); 
+        }
+        },
     },
   };
   </script>

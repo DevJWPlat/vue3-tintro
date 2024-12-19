@@ -3,7 +3,8 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/to-do">To Do</router-link> |
-    <router-link to="/questionare">Questionare</router-link>
+    <router-link to="/questionare">Questionare</router-link> |
+    <router-link to="/buttons">Custom Buttons</router-link>
   </nav>
   <router-view/>
 </template>
@@ -27,6 +28,10 @@ a {
 
 nav {
   padding: 30px;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  text-align: end;
 
   a {
     font-weight: bold;

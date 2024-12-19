@@ -21,7 +21,12 @@ const routes = [
     path: '/questionare',
     name: 'questionare',
     component: () => import('../views/QuestionareView.vue')
-  }
+  },
+  {
+    path: '/buttons',
+    name: 'button ',
+    component: () => import('../views/ButtonView.vue')
+  },
 ]
 
 const router = createRouter({
